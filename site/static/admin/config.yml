@@ -1,7 +1,6 @@
 backend:
   name: github
   repo: Dirklectisch/reaktor-flight-manual
-  open_authoring: true
 
 publish_mode: editorial_workflow
 
