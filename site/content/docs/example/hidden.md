@@ -1,4 +1,5 @@
 ---
+title: hidden
 bookHidden: true
 ---
 
