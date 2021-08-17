@@ -13,8 +13,27 @@ collections:
     folder: "site/content/posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Intro Blurb", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: pages
+    label: Pages
+    label_singular: 'Page'
+    folder: "site/content/docs/example"
+    create: true
+    # adding a nested object will show the collection folder structure
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Body
+        name: body
+        widget: markdown
+    # adding a meta object with a path property allows editing the path of entries
+    # moving an existing entry will move the entire sub tree of the entry to the new location
+    meta: { path: { widget: string, label: 'Path', index_file: 'index' } }
