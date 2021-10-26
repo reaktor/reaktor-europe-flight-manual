@@ -1,18 +1,26 @@
-# Victor Hugo
+# Reaktor Europe Flight Manual
 
-**A Hugo boilerplate for creating truly epic websites**
+This is repository contains the content and code for Reaktor Europe Flight Manual. The intention is for this to become
+a [Gitlab style employee guide](https://about.gitlab.com/company/culture/all-remote/handbook-first-documentation/).
+Having a central place to document our internal ways of working becomes increasingly important in a world we will have
+multiple talent hubs across Europe. This guide will also introduce a new collaboration model where we get to work
+together, propose and discuss changes using change requests that can be started from inside the CMS or directly through
+Github.
 
-This is a boilerplate for using [Hugo](https://gohugo.io/) as a static site generator and [Webpack](https://webpack.js.org/) as your asset pipeline.
+# Victor Hugo & Hugo Book
 
-Victor Hugo setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript compiling/transpiling.
+This repo is based on the Victor Hugo boilerplate & the Hugo Book template. It utilizes [Hugo](https://gohugo.io/) as a
+static site generator and [Webpack](https://webpack.js.org/) as the asset pipeline.
 
-This project is released under the [MIT license](LICENSE). Please make sure you understand its implications and guarantees.
+Victor Hugo setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript
+compiling/transpiling.
 
-## Usage
+# Building Locally
 
 ### :exclamation: Prerequisites
 
-You need to have the latest/LTS [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) versions installed in order to use Victor Hugo.
+You need to have the latest/LTS [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm)
+versions installed in order to use Victor Hugo.
 
 Next step, clone this repository and run:
 
@@ -36,7 +44,8 @@ or for developing your website with `hugo server --buildDrafts --buildFuture`, u
 npm run preview
 ```
 
-Then visit http://localhost:3000/ _- or a new browser windows popped-up already -_ to preview your new website. Webpack Dev Server will automatically reload the CSS or refresh the whole page, when stylesheets or content changes.
+Then visit http://localhost:3000/ _- or a new browser windows popped-up already -_ to preview your new website. Webpack
+Dev Server will automatically reload the CSS or refresh the whole page, when stylesheets or content changes.
 
 ### :package: Static build
 
@@ -79,8 +88,8 @@ The most useful page there is the one about the available functions:
 
 https://gohugo.io/templates/functions/
 
-For assets that are completely static and don't need to go through the asset pipeline,
-use the `site/static` folder. Images, font-files, etc, all go there.
+For assets that are completely static and don't need to go through the asset pipeline, use the `site/static` folder.
+Images, font-files, etc, all go there.
 
 Files in the static folder end up in the web root. So a file called `site/static/favicon.ico`
 will end up being available as `/favicon.ico` and so on...
@@ -89,28 +98,27 @@ The `src/index.js` file is the entrypoint for webpack and will be built to `/dis
 
 You can use **ES6** and use both relative imports or import libraries from npm.
 
-Any CSS file imported into the `index.js` will be run through Webpack, compiled with [PostCSS Next](http://cssnext.io/), and
-minified to `/dist/[name].[hash:5].css`. Import statements will be resolved as part of the build.
+Any CSS file imported into the `index.js` will be run through Webpack, compiled with [PostCSS Next](http://cssnext.io/),
+and minified to `/dist/[name].[hash:5].css`. Import statements will be resolved as part of the build.
 
 ## Environment variables
 
-To separate the development and production _- aka build -_ stages, all gulp tasks run with a node environment variable named either `development` or `production`.
+To separate the development and production _- aka build -_ stages, all gulp tasks run with a node environment variable
+named either `development` or `production`.
 
-You can access the environment variable inside the theme files with `getenv "NODE_ENV"`. See the following example for a conditional statement:
+You can access the environment variable inside the theme files with `getenv "NODE_ENV"`. See the following example for a
+conditional statement:
 
     {{ if eq (getenv "NODE_ENV") "development" }}You're in development!{{ end }}
 
 All tasks starting with _build_ set the environment variable to `production` - the other will set it to `development`.
 
-## Deploying to Netlify
+# Deploying to Netlify
 
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
+- Clone this repository
+- Make any edits and provide a pull request for them
+- The core team will merge your PR into master
 
 Now Netlify will build and deploy your site whenever you push to git.
-
-You can also click this button:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/victor-hugo)
 
 ## Enjoy!! 😸
