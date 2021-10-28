@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Dirklectisch/reaktor-flight-manual
+  repo: reaktor/reaktor-europe-flight-manual
 
 publish_mode: editorial_workflow
 
